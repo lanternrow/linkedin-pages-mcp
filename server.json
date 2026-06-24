@@ -1,0 +1,64 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.lanternrow/linkedin-pages-mcp",
+  "description": "LinkedIn Company Page analytics — follower, page, post, and video statistics (read-only).",
+  "repository": {
+    "url": "https://github.com/lanternrow/linkedin-pages-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "linkedin-pages-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "LinkedIn 3-legged member access token (Page admin consented)",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "LINKEDIN_ACCESS_TOKEN"
+        },
+        {
+          "description": "OAuth app client id (enables automatic token refresh)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "LINKEDIN_CLIENT_ID"
+        },
+        {
+          "description": "OAuth app client secret (enables automatic token refresh)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "LINKEDIN_CLIENT_SECRET"
+        },
+        {
+          "description": "Refresh token (~365 day lifetime)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "LINKEDIN_REFRESH_TOKEN"
+        },
+        {
+          "description": "Default Company Page numeric id",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false,
+          "name": "LINKEDIN_ORGANIZATION_ID"
+        },
+        {
+          "description": "API version YYYYMM (defaults to latest known-good)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false,
+          "name": "LINKEDIN_VERSION"
+        }
+      ]
+    }
+  ]
+}
